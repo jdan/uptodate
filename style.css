@@ -14,8 +14,8 @@ body {
 }
 
 #head #share {
-  width: 400px;
-  float: left;
+  width: 150px;
+  float: right;
 }
 
 #head #title h1 {
