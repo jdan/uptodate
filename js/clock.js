@@ -65,7 +65,7 @@ var draw_clock = function() {
   }
 
   var draw_hands = function() {
-    ctx.clearRect(240, 240);
+    ctx.clearRect(0, 0, 240, 240);
     draw_frame();
 
     var theta;

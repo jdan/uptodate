@@ -44,6 +44,7 @@ body {
 #example {
   width: 600px;
   float: left;
+  height: 310px;
 }
 
 #example #samplepage {
@@ -72,11 +73,13 @@ body {
   font-style: italic;
 }
 
-#example #clock {
+#clock {
+  float: right;
   position: relative;
-  width: 0;
-  top: 130px;
-  right: 100px;
+  width: 150px;
+  height: 150px;
+  bottom: 94px;
+  right: 30px;
 }
 
 #clock-canvas {
