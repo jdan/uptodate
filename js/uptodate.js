@@ -85,7 +85,7 @@ var time_ago_in_words = function(ts) {
 
   } else if (distance_in_minutes == 1) {
     /* exactly one minute ago */
-    return 'One minute ago';
+    return '1 minute ago';
 
   } else if (distance_in_minutes < 45) {
     /* between 1 and 45 minutes, return the number of minutes */
