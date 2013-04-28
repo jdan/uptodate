@@ -1,0 +1,209 @@
+<!doctype html>
+<head>
+    <title>uptodate.js</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="container">
+        <div id="head">
+            <div id="title">
+                <h1>uptodate</h1>
+                <i>keep your timestamps up to date</i>
+            </div>
+            <div id="share">
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div id="example">
+                <div id="samplepage">
+                    <ul id="comments">
+                        <li class="comment">
+                            <div class="timestamp">
+                                <span class="utd-example" data-ago="5000">less than a minute ago</span>
+                            </div>
+                            <b>function_context</b>: Wow, this was really interesting!!
+                        </li>
+                        <li class="comment">
+                            <div class="timestamp">
+                                <span class="utd-example" data-ago="12000">2 minutes ago</span>
+                            </div>
+                            <b>username1234</b>: probably would've been faster in JVM
+                        </li>
+                        <li class="comment">
+                            <div class="timestamp">
+                                <span class="utd-example" data-ago="60000">10 minutes ago</span>
+                            </div>
+                            <b>camelSuitCase</b>: why not just use jquery....??????
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="clock">
+                    <canvas id="clock-canvas" width="240" height="240"></canvas>
+                </div>
+            </div>
+
+            <div class="description">
+                <h3>Keep your timestamps up to speed.</h3>
+                <p>
+                    <i>Uptodate</i> automatically updates the timestamps on your webpage
+                    to reflect their age over time. 
+                </p>
+                <p>
+                    When your users hang out on the same
+                    page for a while, they will no longer be exposed to outdated timestamps.
+                </p>
+
+                <h3>Get up and running in no time.</h3>
+                <p>
+                    <i>Uptodate</i> requires a only few lines of setup, and the default settings
+                    will work for most cases.
+                </p>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="description wide">
+                <h3><span class="num">1</span> Get your timestamps ready.</h3>
+                <p>
+                    By default, <i>uptodate</i> will look for a value in <i>data-time</i>
+                    containing the number of <b>milliseconds</b> since epoch (00:00:00 UTC on 1970
+                    January 1970), on elements of class <i>uptodate</i>
+                </p>
+
+                For example:
+
+                <pre>
+ Posted:
+ &lt;span <span class="code-highlight">class="uptodate" data-time="1367180233904"</span>&gt;
+     4 minutes ago
+ &lt;span&gt;</pre>
+            </div>
+
+            <div class="description wide">
+                <h3><span class="num">2</span> Invoke the uptodate library</h3>
+                <p>
+                    After some brief setup, all that's left is to call <i>uptodate( )</i>
+                </p>
+                <p>
+                    You can pass optional parameters to this function, which will be covered below.
+                </p>
+                For example:
+                <pre>
+ &lt;script src="js/uptodate.js"&gt;
+ &lt;script type="text/javascript"&gt;
+     window.onload = function() {
+         uptodate();
+     };
+ &lt;/script&gt;</pre>
+            </div>
+
+            <div class="clear"></div>
+
+        </div>
+
+        <hr />
+
+        <div class="row">
+
+            <div class="description wide">
+                <h3>Customization options</h3>
+
+                <p>
+                    You can set all (or none) of the following options when 
+                    calling <i>uptodate( )</i>
+                </p>
+
+                <div class="param">
+                    <b>klass</b>:
+                    <pre>Default: 'uptodate'</pre>
+                    This is the class name matching all elements you wish to keep updated.
+                </div>
+
+                <div class="param">
+                    <b>timestamp:</b>
+                    <pre>Default: function(el) {
+  return parseInt(el.getAttribute('data-time'));
+}</pre>
+                    This is a function which, given an element, returns a value that is later
+                    consumed by <i>new Date(__);</i>
+                </div>
+
+                <div class="param">
+                    <b>period:</b>
+                    <pre>Default: 60000</pre>
+                    A number (in milliseconds) describe the time between
+                    updates. The default period is 1 minute (60 seconds).
+                </div>
+
+                <div class="param">
+                    <b>formatter:</b>
+                    <pre>Default: time_ago_in_words /* see source */</pre>
+                    A function which, given the timestamp (explained above), returns a formatted
+                    date string. The default function, <i>time_ago_in_words</i> produces strings
+                    such as "10 minutes ago" or "about 1 hour ago."
+                </div>
+
+            </div>
+
+            <div class="description wide">
+                <h3>About</h3>
+                <p>
+                    <i>Uptodate</i> was created by me, <a href="http://jordanscales.com">Jordan Scales</a>. I hope it makes your life a little bit easier.
+                </p>
+
+                <br/>
+
+                <h3>Contributing</h3>
+                <p>
+                    <i>Uptodate</i> is <a href="http://opensource.org/licenses/MIT">MIT Licensed<a> (see LICENSE.txt)
+                </p>
+                <p>
+                    To contribute to <i>uptodate</i>, please do the following:
+                    <ul>
+                        <li>Fork it.</li>
+                        <li>Create your feature branch (git checkout -b my-new-feature)</li>
+                        <li>Commit your changes (git commit -am 'Add some feature')</li>
+                        <li>Push to the branch (git push origin my-new-feature)</li>
+                        <li>Create new Pull Request</li>
+                    </ul>
+                </p>
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+    </div>
+    <script src="js/uptodate.js"></script>
+    <script src="js/clock.js"></script>
+    <script>
+        /* Note: This code is irrelevant to `uptodate`
+                 It is heavily modified ;) */
+
+        window.onload = function() {
+            place_times();
+            draw_clock();
+        };
+
+        /* place data-time using data-ago */
+        var place_times = function() {
+            var els = document.getElementsByClassName('utd-example');
+
+            for (var i = 0; i < els.length; i++) {
+                var el = els[i];
+                var ago = parseInt(el.getAttribute('data-ago'));
+                el.setAttribute('data-time', (new Date()) - ago);
+            };
+        };
+    </script>
+</body>

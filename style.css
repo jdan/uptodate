@@ -1,0 +1,150 @@
+body {
+  background-color: #fff;
+  color: #222;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#head {
+  margin-bottom: 50px;
+}
+
+#head #title {
+  width: 500px;
+  float: left;
+}
+
+#head #share {
+  width: 400px;
+  float: left;
+}
+
+#head #title h1 {
+  font-size: 60px;
+  margin: 10px 0;
+}
+
+#head #title i {
+  font-weight: 200;
+  color: #888;
+}
+
+#container {
+  width: 960px;
+  margin: 60px auto;
+}
+
+.row {
+  margin: 40px 0 20px 0;
+}
+
+#example {
+  width: 600px;
+  float: left;
+}
+
+#example #samplepage {
+  padding: 20px 30px;
+  margin-top: 20px;
+  width: 450px;
+  float: left;
+  border: 3px solid #555;
+
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+#example #comments {
+  padding: 0;
+}
+
+#example .comment {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+#example .comment .timestamp {
+  font-weight: 200;
+  font-style: italic;
+}
+
+#example #clock {
+  position: relative;
+  width: 0;
+  top: 130px;
+  right: 100px;
+}
+
+#clock-canvas {
+  width: 150px;
+  height: 150px;
+  background-color: transparent;
+}
+
+.description {
+  width: 350px;
+  float: left;
+  line-height: 24px;
+}
+
+.description.wide {
+  width: 450px;
+}
+
+.description.wide:first-child {
+  margin-right: 55px;
+}
+
+.description h3 {
+  margin: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+code, pre {
+  background-color: #ddd;
+  color: #444;
+  border: 1px solid #999;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  padding: 0 5px;
+
+  display: inline-block;
+}
+
+pre {
+  display: block;
+}
+
+.code-highlight {
+  color: rgb(160, 50, 50);
+}
+
+.blue {
+  color: rgb(50, 50, 160);
+}
+
+.num {
+  background-color: #222;
+  color: #fff;
+  padding: 5px 11px;
+  margin-right: 5px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.param {
+  border-left: 1px solid #999;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 30px;
+}
