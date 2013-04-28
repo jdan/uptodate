@@ -41,6 +41,8 @@ var uptodate = function(options) {
 
 var timefix = function(options) {
 
+  $('.' + options.klass).effect('highlight');
+
   /* match all elements by `klass` */
   var els = document.getElementsByClassName(options.klass);
 
