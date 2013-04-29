@@ -75,7 +75,8 @@ var time_ago_in_words = function(ts) {
   var distance = Math.abs(to - from) / 1000;
 
   /* rounding off the distance in minutes and in seconds */
-  var distance_in_minutes = Math.round(distance / 60)
+  var distance_in_minutes = Math.round(distance / 60);
+  var distance_in_hours   = Math.round(distance_in_minutes / 60);
 
   /* generate the output (no i18n for now) */
   if (distance_in_minutes < 1) {
@@ -93,11 +94,13 @@ var time_ago_in_words = function(ts) {
   } else if (distance_in_minutes < 90) {
     /* between 45 and 90 minutes, we are about one hour ago */
     return 'About one hour ago'
-
-  } else {
-    /* all else, we are X hours ago */
+  } else if (distance_in_hours < 24) {
+    /* if it was less than a day ago */
     var hours = Math.round(distance_in_minutes / 60);
-    return hours + ' hours ago';
-
+    return distance_in_hours + ' hours ago';
+  } else {
+    /* if it was more than a day ago, use days */
+    var days = Math.floor(distance_in_hours / 24);
+    return days + ' days ago';
   }
 };
