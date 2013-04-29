@@ -85,18 +85,21 @@ var time_ago_in_words = function(ts) {
 
   } else if (distance_in_minutes < 45) {
     /* between 1 and 45 minutes, return the number of minutes */
-    return distance_in_minutes + ' minute'+(distance_in_minutes ==1?' ':'s ')+'ago';
+    return distance_in_minutes + ' minute' + (distance_in_minutes == 1 ? ' ' : 's ') + 'ago';
 
   } else if (distance_in_minutes < 90) {
     /* between 45 and 90 minutes, we are about one hour ago */
     return 'About one hour ago'
+
   } else if (distance_in_hours < 24) {
     /* if it was less than a day ago */
     var hours = Math.round(distance_in_minutes / 60);
     return distance_in_hours + ' hours ago';
+
   } else {
     /* if it was more than a day ago, use days */
     var days = Math.floor(distance_in_hours / 24);
     return days + ' days ago';
+
   }
 };
