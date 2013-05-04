@@ -37,8 +37,8 @@ var uptodate = function(options) {
   */
   var timefix = function() {
 
-    /* match all elements by `klass` */
-    var els = document.getElementsByClassName(options.klass);
+    /* match all elements by class `klass` */
+    var els = document.querySelectorAll('.' + options.klass);
 
     /* iterate over all matched elements */
     for (var i = 0; i < els.length; i++) {
