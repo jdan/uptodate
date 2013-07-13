@@ -1,0 +1,23 @@
+{
+    "name": "uptodate"
+  , "description": "Keeps the timestamps on your page up to date."
+  , "version": "0.1.0"
+  , "keywords": ["time"]
+  , "homepage": "http://prezjordan.github.com/uptodate/"
+  , "author": "Jordan Scales"
+  , "scripts": { "test": "make test" }
+  , "repository": {
+      "type": "git"
+    , "url": "https://github.com/prezjordan/uptodate.git"
+  }
+  , "licenses": [
+    {
+        "type": "MIT"
+      , "url": "http://opensource.org/licenses/MIT"
+    }
+  ]
+  , "devDependencies": {
+      "uglify-js": "2.3.6"
+    , "jslint": "0.1.9"
+  }
+}

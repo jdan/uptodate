@@ -1,8 +1,18 @@
-/** uptodate.js | (c) 2013 Jordan Scales | See LICENSE.txt
-    Keeps the timestamps on your webpage up to date.
-*/
+/**
+ * uptodate
+ * Keeps the timestamps on your webpage up to date.
+ * http://prezjordan.github.io/uptodate
+ *
+ * Copyright 2013 Jordan Scales (http://jordanscales.com)
+ * Released under the MIT license
+ * See LICENSE.txt
+ */
 
-var uptodate = function(options) {
+/*jslint browser: true, evil: true, sloppy: true, vars: true,
+         indent: 2, maxerr: 20, maxlen: 105, plusplus: true */
+
+var time_ago_in_words;
+var uptodate = function (options) {
 
   /* provide an empty options hash if we're found without one */
   options = options || {};
@@ -13,8 +23,8 @@ var uptodate = function(options) {
 
     /* to fetch the timestamp, we will fetch the `data-time` attribute
        of the given element */
-    timestamp: function(el) {
-      return parseInt(el.getAttribute('data-time'));
+    timestamp: function (el) {
+      return parseInt(el.getAttribute('data-time'), 10);
     },
 
     /* the default period is 1 minute (1000 * 60 ms) */
@@ -35,17 +45,18 @@ var uptodate = function(options) {
         then extract a timestamp from the `attr` attribute
         and send it off to `formatter`
   */
-  var timefix = function() {
+  var timefix = function () {
 
     /* match all elements by class `klass` */
     var els = document.querySelectorAll('.' + options.klass);
+    var el, i, ts;
 
     /* iterate over all matched elements */
-    for (var i = 0; i < els.length; i++) {
-      var el = els[i];
+    for (i = 0; el < els.length; i++) {
+      el = els[i];
 
       /* fetch the timestamp from the `attr` attribute */
-      var ts = options.timestamp(el);
+      ts = options.timestamp(el);
 
       /* send `ts` to the `formatter`
          and place the result in the elements HTML */
@@ -66,7 +77,7 @@ var uptodate = function(options) {
    Feel free to send this output to other functions. For example:
      uptodate({ formatter: function(ts) { return time_ago_in_words(ts).toLowerCase() }; });
 */
-var time_ago_in_words = function(ts) {
+time_ago_in_words = function (ts) {
   /* fetching a `from` and `to` time to work with deltas */
   var from = new Date(ts);
   var to   = new Date();
@@ -77,29 +88,32 @@ var time_ago_in_words = function(ts) {
   /* rounding off the distance in minutes and in seconds */
   var distance_in_minutes = Math.round(distance / 60);
   var distance_in_hours   = Math.round(distance_in_minutes / 60);
+  var result;
 
   /* generate the output (no i18n for now) */
   if (distance_in_minutes < 1) {
     /* in the rare chance that this case is hit, return 'Less than one minute ago' */
-    return 'Less than one minute ago';
+    result = 'Less than one minute ago';
 
   } else if (distance_in_minutes < 45) {
     /* between 1 and 45 minutes, return the number of minutes */
-    return distance_in_minutes + ' minute' + (distance_in_minutes == 1 ? ' ' : 's ') + 'ago';
+    result = distance_in_minutes + ' minute' + (distance_in_minutes === 1 ? ' ' : 's ') + 'ago';
 
   } else if (distance_in_minutes < 90) {
     /* between 45 and 90 minutes, we are about one hour ago */
-    return 'About one hour ago'
+    result = 'About one hour ago';
 
   } else if (distance_in_hours < 24) {
     /* if it was less than a day ago */
     var hours = Math.round(distance_in_minutes / 60);
-    return distance_in_hours + ' hours ago';
+    result = distance_in_hours + ' hours ago';
 
   } else {
     /* if it was more than a day ago, use days */
     var days = Math.floor(distance_in_hours / 24);
-    return days + ' days ago';
+    result = days + ' days ago';
 
   }
+
+  return result;
 };
