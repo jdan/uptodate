@@ -19,7 +19,10 @@
  *
  * Feel free to send this output to other functions. For example:
  *   uptodate({ formatter: function(ts) { return time_ago_in_words(ts).toLowerCase() }; });
-*/
+ *
+ * @param {number} ts The timestamp of the date we are converting to a human-readable format
+ * @return {string} The human-readable timestamp
+ */
 function time_ago_in_words(ts) {
   // fetching a `from` and `to` time to work with deltas
   var from = new Date(ts);
@@ -55,6 +58,8 @@ function time_ago_in_words(ts) {
 /**
  * uptodate
  * The main method that extracts timestamps and generates human-readable time data
+ *
+ * @param {Object} options Some options to pass into the uptodate method
  */
 function uptodate(options) {
   options = options || {};
