@@ -1,10 +1,10 @@
 ## uptodate
 
-[![build status](https://travis-ci.org/prezjordan/uptodate.png)](https://travis-ci.org/prezjordan/uptodate)
+[![build status](https://travis-ci.org/jdan/uptodate.png)](https://travis-ci.org/jdan/uptodate)
 
 Uptodate helps keep your timestamps up to date.
 
-You can read more about it, and see the documentation here: [http://prezjordan.github.io/uptodate](http://prezjordan.github.io/uptodate)
+You can read more about it, and see the documentation here: [http://jdan.github.io/uptodate](http://jdan.github.io/uptodate)
 
 ### Contributing
 
